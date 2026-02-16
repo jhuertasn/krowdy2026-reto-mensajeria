@@ -1,5 +1,3 @@
-// src/data.js
-
 export const initialCandidates = [
     { id: 1, name: 'Roland Deschain', email: 'roland125@gmail.com', phone: '999888777' },
     { id: 2, name: 'Jake Chambers', email: 'jakechambers@gmail.com', phone: '999111222' },

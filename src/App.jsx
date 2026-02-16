@@ -25,8 +25,9 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif', color: '#fff' }}>
-      <h2 style={{ textAlign: 'center' }}>Lista de Candidatos</h2>
+    // Aplicamos la clase "container" que centra todo el layout
+    <div className="container">
+      <h2 className="title">Lista de Candidatos</h2>
       
       <CandidateList 
         candidates={candidates} 
@@ -35,9 +36,10 @@ function App() {
       />
 
       <div style={{ textAlign: 'center' }}>
+        {/* Aplicamos la clase "btn-primary" para el diseño del botón */}
         <button 
+          className="btn-primary"
           onClick={handleOpenModal}
-          style={{ padding: '10px 24px', backgroundColor: '#333', color: 'white', border: '1px solid #666', borderRadius: '5px', cursor: 'pointer', fontSize: '16px' }}
         >
           Preparar Mensaje
         </button>
