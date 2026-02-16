@@ -158,25 +158,44 @@ export default function WizardModal({ selectedCandidates, onClose }) {
         {currentScreen === 'CHANNELS' && renderChannelsStep()}
         {['SMS', 'EMAIL', 'WHATSAPP'].includes(currentScreen) && renderMessageStep()}
 
-        {/* Botones */}
+{/* Botones */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px', marginTop: '24px' }}>
           <button 
             onClick={currentScreenIndex === 0 ? onClose : () => setCurrentScreenIndex(prev => prev - 1)}
-            style={{ padding: '8px 16px', backgroundColor: '#e0e0e0', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+            style={{ padding: '8px 16px', backgroundColor: '#e0e0e0', border: '1px solid #ccc', borderRadius: '4px', cursor: 'pointer', color: '#333' }}
           >
             {currentScreenIndex === 0 ? 'Cancelar' : 'Atrás'}
           </button>
           
-          {currentScreenIndex < activeScreens.length - 1 ? (
-            <button onClick={handleNext} style={{ padding: '8px 16px', backgroundColor: '#222', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+          {/* Lógica Senior: Si hay más pantallas, O si estamos en la pantalla de canales y no hay ninguno seleccionado */}
+          {currentScreenIndex < activeScreens.length - 1 || (currentScreen === 'CHANNELS' && !channels.sms && !channels.email && !channels.whatsapp) ? (
+            <button 
+              onClick={handleNext} 
+              disabled={currentScreen === 'CHANNELS' && !channels.sms && !channels.email && !channels.whatsapp}
+              style={{ 
+                padding: '8px 16px', 
+                // Se pone gris si está en canales y no seleccionó nada
+                backgroundColor: (currentScreen === 'CHANNELS' && !channels.sms && !channels.email && !channels.whatsapp) ? '#666' : '#222', 
+                color: '#fff', 
+                border: 'none', 
+                borderRadius: '4px', 
+                cursor: (currentScreen === 'CHANNELS' && !channels.sms && !channels.email && !channels.whatsapp) ? 'not-allowed' : 'pointer' 
+              }}
+            >
               Siguiente
             </button>
           ) : (
-            <button onClick={handleSend} style={{ padding: '8px 16px', backgroundColor: '#2b9348', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
-              Enviar Mensajes
+            <button 
+              onClick={handleSend} 
+              style={{ padding: '8px 16px', backgroundColor: '#2b9348', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+            >
+              {/* Dinámico: Singular o Plural */}
+              Enviar {selectedCandidates.length === 1 ? 'Mensaje' : 'Mensajes'}
             </button>
           )}
         </div>
+
+
       </div>
     </div>
   );
