@@ -1,6 +1,6 @@
-# 📩 Sistema de Mensajería para Candidatos (Reto Krowdy)
+# 📩 Sistema de Mensajería para Candidatos
 
-Este proyecto es una aplicación web desarrollada con **React** y **Vite** que permite a los reclutadores seleccionar candidatos y enviarles mensajes personalizados a través de múltiples canales (SMS, Correo Electrónico y WhatsApp) mediante un flujo de pasos (*Wizard*).
+Este proyecto es una aplicación web desarrollada con **React** y **Vite** que permite a los reclutadores seleccionar candidatos y enviarles mensajes personalizados a través de múltiples canales (SMS, Correo Electrónico y WhatsApp) mediante un flujo de pasos.
 
 ## 🚀 Características Principales
 
