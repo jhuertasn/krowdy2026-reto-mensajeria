@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useState } from 'react';
 import { initialCandidates } from './datosCandidatos';
 import CandidateList from './components/ListaCandidatos';
@@ -25,7 +24,7 @@ function App() {
   };
 
   return (
-    // Aplicamos la clase "container" que centra todo el layout
+    // Aplicamos la clase "container" que centra todo el layout de nuestro app.css
     <div className="container">
       <h2 className="title">Lista de Candidatos</h2>
       
@@ -36,7 +35,7 @@ function App() {
       />
 
       <div style={{ textAlign: 'center' }}>
-        {/* Aplicamos la clase "btn-primary" para el diseño del botón */}
+        {/* Aplicamos la clase "btn-primary" para el diseño del botón de nuestro app.css */}
         <button 
           className="btn-primary"
           onClick={handleOpenModal}

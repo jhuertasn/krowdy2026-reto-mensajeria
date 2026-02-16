@@ -1,9 +1,11 @@
+ // Datos de los candidatos
 export const initialCandidates = [
     { id: 1, name: 'Roland Deschain', email: 'roland125@gmail.com', phone: '999888777' },
     { id: 2, name: 'Jake Chambers', email: 'jakechambers@gmail.com', phone: '999111222' },
     { id: 3, name: 'Kento Nanami', email: 'kentonanami@gmail.com', phone: '999333444' },
 ];
 
+  // Plantillas que se usaran en los mensajes para correo, sms y whatsapp
 export const TEMPLATES = {
     invitacion: {
         sms: 'Hola [Nombre], te invitamos a participar en el proceso de [nombre del proceso/actividad] que se llevará a cabo el [fecha] a las [hora]. Por favor, confirma tu asistencia respondiendo a este mensaje. ¡Te esperamos!',
